@@ -7,6 +7,7 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.UiSettings;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
@@ -42,5 +43,11 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         LatLng Taruc = new LatLng(3.216430, 101.726818);
         mMap.addMarker(new MarkerOptions().position(Taruc).title("Marker in TARUC"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(Taruc));
+        // Set a preference for minimum and maximum zoom.
+        mMap.setMinZoomPreference(6.0f);
+        mMap.setMaxZoomPreference(20.0f);
+
     }
+
+
 }
